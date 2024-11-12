@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping With Me</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom styling */
+        .navbar {
+            margin-bottom: 20px;
+            background-color: rgb(14, 108, 216);
+        }
+        .product-card img {
+            height: 250px;
+            object-fit: cover;
+        }
+        .footer {
+            background: #7ca1e6;
+            color: white;
+            padding: 20px 0;
+        }
+        .welcome-section {
+            background-image: url('data:image/jpeg;base64,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');
+            background-size: cover;      
+            background-position: center; 
+            color: white;                
+            padding: 100px 20px;         
+            border-radius: 10px;         
+            position: relative;         
+            overflow: hidden;
+            text-align: right;
+        }
+
+        .welcome-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); 
+            z-index: 1;
+        }
+
+        .welcome-section h1,
+        .welcome-section p,
+        .welcome-section a {
+            position: relative;
+            z-index: 2; /* Places text above overlay */
+        }
+
+        /* Hover effect for product cards */
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">ShopEasy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            <li class="nav-item"><a class="nav-link btn btn-primary text-white" href="#">Cart</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<div class="welcome-section container text-center my-5">
+    <h1>Welcome to ShopEasy!</h1>
+    <p class="lead">Discover our latest products at unbeatable prices</p>
+    <a href="#products" class="btn btn-primary btn-lg">Shop Now</a>
+</div>
+
+<!-- Product Section -->
+<div class="container" id="products">
+    <div class="row">
+        <!-- Example Product Card -->
+        <div class="col-md-4">
+            <div class="card product-card mb-4 shadow-sm">
+                <img src="https://www.alamodelabel.in/cdn/shop/files/2D796CDB-CED1-4828-A4B7-F94536DAE86F_600x.jpg?v=1717500880" alt="Product Image">
+                <div class="card-body">
+                    <h5 class="card-title">Alamode Label Gemma Tweed 2 Pc Set Beige / L</h5>
+                    <p class="card-text">The Alamode Label Gemma Tweed 2 Pc Set in Beige is a chic and sophisticated two-piece outfit that combines modern fashion with timeless elegance. It includes a tailored tweed jacket with a fitted cut, structured shoulders, and gold-tone button paired with a matching high-waisted skirt .</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="text-muted">$150 to $400</span>
+                        <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Repeat similar product cards -->
+        <div class="col-md-4">
+            <div class="card product-card mb-4 shadow-sm">
+                <img src="https://i.pinimg.com/736x/74/75/48/7475484bc89b6b0f8923206e0922e8f1.jpg" class="card-img-top" alt="Product Image">
+                <div class="card-body">
+                    <h5 class="card-title">Korean Casual Dress</h5>
+                    <p class="card-text">Embrace modern elegance with a touch of Korean flair in this chic, versatile casual dress. Designed for those who love understated yet stylish fashion, this dress perfectly combines comfort and trendy details. Made from soft, breathable fabric, it offers a relaxed fit that’s ideal for everyday wear, whether you’re running errands or meeting friends for a casual outing.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="text-muted">$29.99 - $49.99</span>
+                        <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card product-card mb-4 shadow-sm">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLW32bZvR0N9tj7DBYiwCchcrlP7VMdZJWFxq3zEtu96yGiQQkO2BVShCeHaslAUfhsaI&usqp=CAU">
+                <div class="card-body">
+                    <h5 class="card-title">Summer clearance dress korean</h5>
+                    <p class="card-text">Embrace the summer breeze with this stylish and comfortable Summer Clearance Dress. Perfect for any occasion, this dress combines modern Korean fashion trends with timeless elegance. The breathable fabric ensures a cool and fresh feel even during the hottest days, while the simple yet chic design adds a touch of sophistication to your summer wardrobe.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="text-muted">$29.99</span>
+                        <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card product-card mb-4 shadow-sm">
+                <img src="https://s.alicdn.com/@sc04/kf/H903f64934b9a48ff9989b3089e67e1bcj.png_720x720q50.jpg" class="card-img-top" alt="Product Image">
+                <div class="card-body">
+                    <h5 class="card-title">In Stock Korean Skirts Retro Niche Style French Lapel</h5>
+                    <p class="card-text">This chic and elegant Korean-style dress is perfect for fashion-forward women looking to add a touch of retro flair to their wardrobe. The dress features a stylish French lapel design that adds sophistication, paired with a flattering sleeveless cut ideal for warm weather. The retro niche style makes it stand out with its unique, vintage-inspired skirt that enhances its feminine silhouette. This dress is made from high-quality fabric, ensuring comfort and durability, making it perfect for various occasions such as casual outings, brunch dates, or even parties. The versatile design allows for easy pairing with accessories.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="text-muted">$8.99</span>
+                        <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card product-card mb-4 shadow-sm">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ5ub7_26cn85Ee0BUPq4jUOP81MequxfrYQ&s" class="card-img-top" alt="Product Image">
+                <div class="card-body">
+                    <h5 class="card-title">Cute Chic Dress - Etsy Australia</h5>
+                    <p class="card-text">This Cute Chic Dress is the perfect blend of style, comfort, and versatility. Made with love, this dress features a flattering silhouette that will make you feel confident and chic wherever you go. Its timeless design includes elegant details such as a subtle ruffle trim, a soft waist tie for a more defined shape, and a breezy, lightweight fabric that ensures comfort throughout the day. Whether you're heading to a brunch, a casual outing, or a date night, this dress will keep you looking effortlessly stylish. Available in a range of lovely colors, it’s easy to mix and match with accessories, making it a must-have for your wardrobe.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="text-muted">$29.99</span>
+                        <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card product-card mb-4 shadow-sm">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVuTRaK7tX27JEsz08mA3sCRCEvGNFkUWuLUD0m0gkpRLM4O5Z3ddtklWODH1C6XW7NmI&usqp=CAU" class="card-img-top" alt="Product Image">
+                <div class="card-body">
+                    <h5 class="card-title">Women Dress Summer 2023 New Floral Printed Chiffon Dress V-Nec</h5>
+                    <p class="card-text">Step into summer in style with the Women’s Summer 2023 New Floral Printed Chiffon Dress. Featuring a beautiful and vibrant floral print, this dress embodies the essence of warm weather fashion. The lightweight chiffon fabric ensures breathability and comfort, while the flattering V-neckline adds a touch of elegance. Whether you’re heading to a garden party, beach outing, or casual day out, this dress is designed to make you feel feminine and chic. The relaxed fit and flowing silhouette provide ease of movement, making it a perfect choice for those sunny days. With its bold and timeless floral pattern, this dress is sure to become your go-to summer wardrobe staple.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="text-muted">$29.99</span>
+                        <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+        <!-- More product cards here (Repeat as needed) -->
+
+
+
+
+        
+
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer text-center">
+    <p>© 2024 ShopEasy. All rights reserved.</p>
+</div>
+
+<!-- Bootstrap JavaScript and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
